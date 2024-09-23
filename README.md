@@ -1,6 +1,6 @@
 # api_call_sample_fapp
 
-A new Flutter project.
+A new Flutter sample project for the REST api calling.
 
 ## Getting Started
 
