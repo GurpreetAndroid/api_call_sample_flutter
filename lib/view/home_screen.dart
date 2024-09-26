@@ -129,39 +129,9 @@ class HomeState extends State<HomeScreen> {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      const MyTextWidget(isExpand: true, flexVal: 3,  text: 'Customer', size: 11.0, isMarquee: true,),
-                      const MyTextWidget(text: ': ', color: Colors.black, size: 12.0,  ),
-                      MyTextWidget(isExpand: true, flexVal: 7,  text: '${ticketDetails.customer!.firstName} ${ticketDetails.customer!.lastName}', size: 12.0, fontWeight: FontWeight.w400, isMarquee: true,),
-                    ],
-                  ),
-                  const VerticalSpacing(5.0),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      const MyTextWidget(isExpand: true, flexVal: 3, text: 'Mobile No.', size: 11.0,isMarquee: true,),
+                      const MyTextWidget(isExpand: true, flexVal: 3, text: 'Status', size: 11.0,isMarquee: true,),
                       const MyTextWidget(text: ': ', size: 12.0,),
-                      MyTextWidget(isExpand: true, flexVal: 7, text: '${ticketDetails.customer!.mobileNo}', size: 12.0, fontWeight: FontWeight.w400, isMarquee: true,),
-                    ],
-                  ),
-                  const VerticalSpacing(5.0),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      const MyTextWidget(isExpand: true, flexVal: 3, text: 'Date & Time', size: 11.0,isMarquee: true,),
-                      const MyTextWidget(text: ': ', size: 12.0,),
-                      MyTextWidget(isExpand: true, flexVal: 7, text: '${ticketDetails.complaintDate} ${ticketDetails.complaintTime}', size: 12.0, fontWeight: FontWeight.w400, isMarquee: true,),
-                    ],
-                  ),
-                  const VerticalSpacing(5.0),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      const MyTextWidget(isExpand: true, flexVal: 3, text: 'Priority', size: 11.0,isMarquee: true,),
-                      const MyTextWidget(text: ': ', size: 12.0,),
-                      MyTextWidget( isExpand: true, flexVal: 7, text: ticketDetails.priorityStatus ?? "",  color: priorityColorValue, size: 12.0, fontWeight: FontWeight.w600, isMarquee: true,),
+                      MyTextWidget( isExpand: true, flexVal: 7, text: ticketDetails.ticketStatus ?? "",  color: priorityColorValue, size: 12.0, fontWeight: FontWeight.w600, isMarquee: true,),
 
                     ],
                   ),
