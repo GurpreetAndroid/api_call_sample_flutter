@@ -1,12 +1,10 @@
-import 'dart:io';
 import '../utils/utilities.dart';
 import 'package:flutter/cupertino.dart';
 
 class AppLogger{
 
   static setConfig(){
-    //MyLogger.config..activeLogLevel = LogLevel.DEBUG;
-    // MyLogger.config..timestampFormat = TimestampFormat.TIME_FORMAT_FULL_1;
+
   }
 
   static logInfo(String logMessage, {String? className, String? methodName,}) {
@@ -55,10 +53,5 @@ class AppLogger{
     debugPrint(logs.toString());
   }
 
-
-
 }
-
-
-// https://github.com/mjablecnik/MyLogger/tree/master/example
 

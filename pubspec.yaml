@@ -36,9 +36,11 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   http: ^1.2.2 # for api calling
+  provider: ^6.0.5 # notify provider for api response..
   archive: ^3.3.2  # for gzip decoder
   another_flushbar: ^1.12.29  # for custom toast message
   intl: ^0.18.1  # for date formatter
+  internet_connection_checker_plus: ^2.3.0
 
 dev_dependencies:
   flutter_test:

@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
- import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'app_exceptions.dart';
@@ -18,7 +18,7 @@ class ApiService with ChangeNotifier {
     notifyListeners();
   }
 
-  Future<ResponseModel> getApiDataNew2(var headerData, var bodyData, var apiUrl) async {
+  Future<ResponseModel> getApiData(var headerData, var bodyData, var apiUrl) async {
     try {
       AppLogger.logInfo("HEADER DATA :: $headerData");
       AppLogger.logInfo("API URL :: $apiUrl");
@@ -26,15 +26,9 @@ class ApiService with ChangeNotifier {
       var request = await http.post(
         apiUrl, headers: headerData, body: jsonEncode(bodyData),
       ).timeout(const Duration(seconds: 20), onTimeout: (){
-        /// here is the response if api call time out
-        /// you can show snackBar here or where you handle api call
         return Response('Time out!', 500);
-        // throw FetchDataException('Time Out exception');
       });
-
       final http.Response response =  request;
-      debugPrint("response.body 0 ::  ${response.toString()}");
-
       AppLogger.logInfo("response.body 00::  ${response.body}");
       return ResponseModel.fromJson(returnResponse(response));
     } on TimeoutException catch (_) {
@@ -42,16 +36,12 @@ class ApiService with ChangeNotifier {
       throw FetchDataException('Time Out exception');
     } on SocketException {
       throw FetchDataException('No Internet Connection');
-      //http.Response response =
-      //return ResponseModel.fromJson(returnResponse(response));
     }
   }
-
 
   dynamic returnResponse(http.Response response) {
     switch (response.statusCode) {
       case 200:
-        //debugPrint("response.body 000 ::  ${response.toString()}");
         dynamic responseJson = jsonDecode(response.body);
         AppLogger.logInfo("response.body ::  ${response.body}");
         return responseJson;
